@@ -1,0 +1,45 @@
+\def\ReadCommandLineArg#1 {%
+  \def\CommandLineArg{#1}%
+  \input{\jobname}}
+\unless\ifdefined\CommandLineArg
+\endinput\expandafter\expandafter\expandafter\ReadCommandLineArg\fi
+
+\documentclass[english]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=2cm}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+
+\usepackage{float}
+
+\usepackage[english]{babel}
+\addto\captionsenglish{\renewcommand{\chaptername}{Bölüm}}
+\addto\captionsenglish{\renewcommand{\contentsname}{İçindekiler}}
+
+
+\begin{document}
+\hyphenrules{turkish}
+\title{Denemeler}
+\author{Kaan Yazar}
+\maketitle
+%
+\mainmatter
+\tableofcontents
+%
+\ifthenelse{\equal{\CommandLineArg}{kitap}}
+{
+\input{chapter1/chapter1}
+\input{chapter2/chapter2}
+\input{chapter3/chapter3}
+}
+{
+\input{\CommandLineArg/\CommandLineArg}
+}
+
+\end{document}
+
