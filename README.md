@@ -4,13 +4,13 @@ Latex için kitap şablonu
 
 Bütün bölümleri kitap haline getirmek için.
 
-``make kitap``
+``$ make kitap``
 
 Sadece bir bölümü derlemek için
 
-make chapter 2
+``$ make chapter 2``
 
 veya
 
-make bolum 2
+``$ make bolum 2``
 
