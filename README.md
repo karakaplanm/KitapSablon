@@ -4,7 +4,7 @@ Latex için kitap şablonu
 
 Bütün bölümleri kitap haline getirmek için.
 
-''make kitap''
+``make kitap``
 
 Sadece bir bölümü derlemek için
 
